@@ -20,3 +20,11 @@ class Image:
             imArr = resize(imArr, (imArr.shape[0] * resizeFactor, imArr.shape[1] * resizeFactor))
         result = Image(imName, imArr)
         return result
+
+    def getCorners(image):
+        imArr = image.imArr
+        return np.array(
+            [(0, 0), (0, imArr.shape[0] - 1), (imArr.shape[1] - 1, imArr.shape[0] - 1), (imArr.shape[1] - 1, 0)])
+
+    def corners(self):
+        return Image.getCorners(self.imArr)
