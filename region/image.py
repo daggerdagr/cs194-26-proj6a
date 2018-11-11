@@ -21,10 +21,10 @@ class Image:
         result = Image(imName, imArr)
         return result
 
-    def getCorners(image):
+    def getCorners(image, padding = 0):
         imArr = image.imArr
         return np.array(
-            [(0, 0), (0, imArr.shape[0] - 1), (imArr.shape[1] - 1, imArr.shape[0] - 1), (imArr.shape[1] - 1, 0)])
+            [(0 - padding, 0 - padding), (0 - padding, imArr.shape[0] + padding - 1), (imArr.shape[1] + padding - 1, imArr.shape[0] + padding - 1), (imArr.shape[1] + padding - 1, 0 - padding)])
 
     def corners(self):
         return Image.getCorners(self.imArr)
