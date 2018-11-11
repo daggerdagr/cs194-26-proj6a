@@ -69,3 +69,9 @@ def convertToGifArr(fileName, lstImArr, resizeFactor = None):
 
 def backForth(result):
     return result + result[::-1]
+
+def fileToString(fileName):
+    f = open(fileName, "r+")
+    content = f.read()
+    f.close()
+    return content

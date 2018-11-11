@@ -28,3 +28,11 @@ class Image:
 
     def corners(self):
         return Image.getCorners(self.imArr)
+
+    def readCoordsIn(self, pathName):
+        self.pts = Image.readCoords(pathName)
+
+    def readCoords(pathName):
+        fileString = fileToString(pathName)
+        coords = np.array([[float(n) for n in entry.split(",")] for entry in fileString.split("\n")])
+        return coords
