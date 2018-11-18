@@ -17,7 +17,7 @@ class Image:
             newIm[:, :, 2] = imArr
             imArr = newIm
         if resize != 1.0:
-            imArr = resize(imArr, (imArr.shape[0] * resizeFactor, imArr.shape[1] * resizeFactor))
+            imArr = resize(imArr, (int(imArr.shape[0] * resizeFactor), int(imArr.shape[1] * resizeFactor)))
         result = Image(imName, imArr)
         return result
 

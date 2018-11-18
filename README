@@ -1,0 +1,22 @@
+TO RUN SUPER SIMPLE EXAMPLES OF THIS PROJECT
+
+    uncomment/comment any of the functions written in main.py
+
+warping.py
+
+    contains a lot of the warping logic, including:
+        computeH()
+            for finding the values inside of H
+
+        warpTo()
+            warps an image using correspondence points
+            sourcePts: original points on the image
+            targetPts: points to use to find the warping needed to transform the image
+
+        and other helper methods
+
+outputMake.py
+    functions to create different blending of warps
+
+utils.py
+    just personal helper functions

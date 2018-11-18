@@ -75,3 +75,12 @@ def fileToString(fileName):
     content = f.read()
     f.close()
     return content
+
+def getPoints(im, n):
+    n = int(n)
+    plt.imshow(im.imArr)
+    points = plt.ginput(n, timeout = 300, show_clicks=True)
+    plt.close()
+    print("Points gotten from", im.name, ":", str(points))
+    return np.array(points)
+
