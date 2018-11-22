@@ -138,7 +138,7 @@ def warpProcess(imBase, imBasePts, imgList, padding=0):
 
 def genImages(warpedResults):
     allCorners = np.vstack([warped.corners for warped in warpedResults])
-    print(allCorners)
+    print("allCorners:", allCorners)
     finH, finW, minH, minW = getDimensions(allCorners)
     # finalImage = Image("finalImage", np.zeros((finH, finW, 3)))
 
