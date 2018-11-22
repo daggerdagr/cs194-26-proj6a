@@ -88,6 +88,9 @@ class WarpedImageInfo:
 
 def warpTo(imSource, sourcePts, targetPts, padding=0):
     H = computeH(sourcePts, targetPts)
+    return warpWH(imSource, H, padding)
+
+def warpWH(imSource, H, padding = 0):
     sourceCorners = Image.getCorners(imSource, padding)
     tfSourceCorners = transf(H, sourceCorners)
 
@@ -131,6 +134,9 @@ def warpProcess(imBase, imBasePts, imgList, padding=0):
 
         warpedResults.append(warpTo(im, imPts, imBasePts, padding))
 
+    return genImages(warpedResults)
+
+def genImages(warpedResults):
     allCorners = np.vstack([warped.corners for warped in warpedResults])
     print(allCorners)
     finH, finW, minH, minW = getDimensions(allCorners)
