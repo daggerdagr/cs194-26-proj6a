@@ -94,8 +94,8 @@ def warpWH(imSource, H, padding = 0):
     sourceCorners = Image.getCorners(imSource, padding)
     tfSourceCorners = transf(H, sourceCorners)
 
-    print("sourceCorners:", sourceCorners)
-    print("tfSourceCorners:", tfSourceCorners)
+    print("sourceCorners:\n", sourceCorners)
+    print("tfSourceCorners:\n", tfSourceCorners)
 
     targetPs = findAllCoords(tfSourceCorners)
 
@@ -138,7 +138,7 @@ def warpProcess(imBase, imBasePts, imgList, padding=0):
 
 def genImages(warpedResults):
     allCorners = np.vstack([warped.corners for warped in warpedResults])
-    print("allCorners:", allCorners)
+    # print("allCorners:", allCorners)
     finH, finW, minH, minW = getDimensions(allCorners)
     # finalImage = Image("finalImage", np.zeros((finH, finW, 3)))
 
